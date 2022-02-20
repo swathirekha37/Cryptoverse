@@ -5,7 +5,7 @@ import { Footer } from 'antd/lib/layout/layout';
 const FooterComponent = () => {
   return (
 
-    <Footer className='text-white bg-slate-900 flex flex-col items-center font-medium'>
+    <Footer className='text-white bg-slate-900 flex flex-col items-center font-medium fixed bottom-0 left-0 w-full'>
         <h2>Cryptoverse</h2>
         <h3>All rights reserved</h3>
         <div className='flex space-x-2 text-blue-700 font-light'>
