@@ -14,15 +14,15 @@ const Homepage = () => {
     const {data,isFetching} = useGetCryptosQuery(10)
     
     console.log('homepage rendered')
-    console.log(data)
-
+    
+  console.log(data);
     if(isFetching) return 'Loading...';
     const globalStats = data ?.data.stats
   return (
     
-    <Layout className='w-[76.5rem] h-20 bg-slate-100 '>
+    <Layout className='bg-white-100'>
     
-      <h1 className='pt-5 pl-2 text-2xl font-medium'>Global Crypto Stats</h1>
+      <h1 className='pt-5 w-[76.5rem]  bg-slate-100 h-20 pl-2 text-2xl font-medium'>Global Crypto Stats</h1>
 
       <div className='ml-4 mt-5 pt-5 grid grid-cols-2 font-light text-lg'>
 
@@ -54,19 +54,20 @@ const Homepage = () => {
 
       <div>
         <div className='mt-5 grid grid-cols-2'>
+          <h1 className='pl-2 text-2xl font-medium '>Latest Crypto News</h1>
+          <Link to="/news" className='ml-[30rem] text-sky-500 font-medium'>Show More</Link>
+        </div>
+        <News simplified/>
+      </div>
+
+      
+        <div className='mt-5 grid grid-cols-2'>
           <h1 className='pl-2 text-2xl font-medium'>Top 10 Cryptocurrencies in the world</h1>
           <Link to="/cryptocurrencies" className='ml-[30rem] text-sky-500 font-medium'>Show More</Link>
         </div>
         <Cryptocurrencies simplified/>
-      </div>
+      
 
-      <div>
-        <div className='mt-5 grid grid-cols-2'>
-          <h1 className='pl-2 text-2xl font-medium '>Top 10 News</h1>
-          <Link to="/news" className='ml-[30rem] text-sky-500 font-medium'>Show More</Link>
-        </div>
-        <News/>
-      </div>
     </Layout>
   );
 }

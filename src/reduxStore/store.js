@@ -1,23 +1,14 @@
 
-//  connect api with Store
-
-//  homepage include use hook and  console and see data
-
-
-// import { createStore } from "redux";
-
-// export default store = createStore({
-//     reducer : {
-//         [.reducerPath] = .reducer
-//     }
-// })
-
 import { configureStore } from '@reduxjs/toolkit'
 import {cryptoApi} from '../services/cryptoApi'
+import { cryptoNewsApi } from '../services/newsApi'
+// import {exchangeApi} from '../services/exchangesApi'
 
 const store = configureStore({
   reducer: {
-    [cryptoApi.reducerPath] : cryptoApi.reducer
+    [cryptoApi.reducerPath] : cryptoApi.reducer,
+    [cryptoNewsApi.reducerPath] : cryptoNewsApi.reducer
+    // [exchangeApi.reducerPath] : exchangeApi.reducer
   },
 })
 

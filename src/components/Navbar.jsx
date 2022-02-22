@@ -17,7 +17,7 @@ const Navbar = () => {
         <Layout>
 
             <Sider className=''>
-                <div className='bg-slate-900 h-[91.5vh] text-sky-400'>
+                <div className='bg-slate-900 h-[100vh] fixed text-sky-400'>
                     <div className='flex space-x-4'> 
                         <Image width={40} src={logo} className="m-3 p-1"/>
                         <h1 className='text-2xl my-3 '>Cryptoverse</h1>

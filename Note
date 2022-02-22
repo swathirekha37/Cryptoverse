@@ -1,0 +1,3 @@
+website becomes responsive with eg: pr-4w-[16rem]
+
+useParams is used to assign id which we pass in url.

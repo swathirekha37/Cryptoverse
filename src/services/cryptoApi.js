@@ -1,21 +1,3 @@
-// var options = {
-//     method: 'GET',
-//     url: 'https://coinranking1.p.rapidapi.com/coins',
-//     params: {
-//       referenceCurrencyUuid: 'yhjMzLPhuIDl',
-//       timePeriod: '24h',
-//       tiers: '1',
-//       orderBy: 'marketCap',
-//       orderDirection: 'desc',
-//       limit: '50',
-//       offset: '0'
-//     },
-//     headers: {
-//       'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-//       'x-rapidapi-key': 'cfe44ec9abmshe0ef5b83ef22b9fp1824d9jsn01dcc76355ff'
-//     }
-//   };
-
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const cryptoApiHeaders = {
@@ -32,15 +14,18 @@ export const cryptoApi = createApi({
     baseQuery : fetchBaseQuery({baseUrl}),
     endpoints : (builder) => ({
         getCryptos : builder.query({
-            query : (count) => createRequest(`/coins?limit=${count}`)
+            query : (count) => createRequest(`coins?limit=${count}`)
         }),
-        // getCoins : builder => {
-        //     query : () =>
-        // },
+    
         getCoinById : builder.query({
-            query : () => createRequest('coin/Qwsogvtv82FCd')
-        })
+            query : (coinId) => createRequest(`coin/${coinId}`)
+        }),
+        
+
     })
 })
-console.log("data from api",cryptoApi);
-export const {useGetCryptosQuery, useGetCoinByIdQuery} =  cryptoApi
+
+export const {useGetCryptosQuery, useGetCoinByIdQuery,} =  cryptoApi
+
+console.log(cryptoApi);
+console.log(useGetCryptosQuery);

@@ -17,10 +17,10 @@ const Cryptocurrencies = ({simplified}) => {
    setCryptos(filteredData)
   }, [cryptosList,searchContent]);
   
-  // console.log(cryptos)
+  // console.log(cryptosList)
   return (
     <Layout>
-      <input placeholder="seach crypto" className='border rounded-md ml-10 mt-3 p-3 flex items-center' onChange={(e)=>setSearchContent(e.target.value)}/>
+     {!simplified &&  <input placeholder="search crypto" className='border rounded-md ml-10 mt-3 p-3 flex items-center' onChange={(e)=>setSearchContent(e.target.value)}/>}
 
     <div className='grid grid-cols-4 gap-2 m-5'>
 
